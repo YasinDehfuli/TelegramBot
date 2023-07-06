@@ -6,8 +6,17 @@ const token = 'TOKEN-HERE';
 const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/start/, msg => {
-    bot.sendMessage(msg.chat.id,'salaM '+ msg.chat.first_name + ' bE boT maN khoshoomadI :)'
-
+    bot.sendMessage(msg.chat.id,'salaM '+ msg.chat.first_name + ' bE boT maN khoshoomadI :)',
+        {
+        reply_markup : {
+            'keyboard' :[
+                ['لینک من','معرفی به دیگران']
+                    ,
+                ['درباره ما','ارسال لینک']
+            ]
+        }
+    }
     )
+
 })
 
